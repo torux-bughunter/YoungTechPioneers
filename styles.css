@@ -6,8 +6,9 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
     line-height: 1.6;
+    color: #333;
 }
 
 .container {
@@ -18,7 +19,7 @@ body {
 
 /* Navbar */
 .navbar {
-    background: #333;
+    background: #004085;
     color: #fff;
     padding: 10px 0;
 }
@@ -27,7 +28,7 @@ body {
     color: #fff;
     text-decoration: none;
     font-size: 1.8em;
-    text-transform: uppercase;
+    font-weight: 600;
 }
 
 .navbar .nav-links {
@@ -37,13 +38,18 @@ body {
 
 .navbar .nav-links li {
     display: inline;
-    padding: 0 20px;
+    padding: 0 15px;
 }
 
 .navbar .nav-links a {
     color: #fff;
     text-decoration: none;
-    text-transform: uppercase;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-links a:hover {
+    color: #ffdd57;
 }
 
 /* Hero Section */
@@ -55,145 +61,181 @@ body {
 }
 
 .hero-section h2 {
-    font-size: 2.5em;
+    font-size: 2.8em;
     margin-bottom: 20px;
+    font-weight: 600;
 }
 
 .hero-section p {
-    font-size: 1.2em;
+    font-size: 1.3em;
     margin-bottom: 40px;
+    font-weight: 300;
 }
 
 .cta-button {
-    background: #00aaff;
-    color: #fff;
-    padding: 10px 20px;
+    background: #ffdd57;
+    color: #004085;
+    padding: 12px 25px;
     text-decoration: none;
     font-size: 1.2em;
-    border-radius: 5px;
+    font-weight: 500;
+    border-radius: 25px;
+    transition: background 0.3s ease;
 }
 
 .cta-button:hover {
-    background: #0088cc;
+    background: #ffd800;
 }
 
 /* About Section */
 .about-section {
-    padding: 50px 0;
-    background: #f4f4f4;
+    padding: 60px 0;
+    background: #f8f9fa;
     text-align: center;
 }
 
 .about-section h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
+    font-size: 2.4em;
+    margin-bottom: 25px;
+    font-weight: 600;
 }
 
 .about-section p {
     font-size: 1.1em;
-    width: 70%;
+    width: 75%;
     margin: auto;
+    font-weight: 300;
 }
 
 /* Events Section */
 .events-section {
-    padding: 50px 0;
+    padding: 60px 0;
     text-align: center;
 }
 
 .events-section h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
+    font-size: 2.4em;
+    margin-bottom: 25px;
+    font-weight: 600;
 }
 
 .event-card {
     background: #fff;
-    padding: 20px;
+    padding: 30px;
     margin: 20px 0;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
 .event-card h3 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    font-weight: 500;
 }
 
 .event-link {
     display: inline-block;
     margin-top: 10px;
-    color: #00aaff;
+    color: #004085;
     text-decoration: none;
+    font-weight: 500;
+}
+
+/* Success Stories Section */
+.success-section {
+    padding: 60px 0;
+    background: #f8f9fa;
+    text-align: center;
+}
+
+.success-section h2 {
+    font-size: 2.4em;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.success-story {
+    background: #fff;
+    padding: 30px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.success-story h3 {
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    font-weight: 500;
 }
 
 /* Get Involved Section */
 .get-involved-section {
-    padding: 50px 0;
-    background: #f4f4f4;
+    padding: 60px 0;
     text-align: center;
 }
 
 .get-involved-section h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-}
-
-/* Resources Section */
-.resources-section {
-    padding: 50px 0;
-    text-align: center;
-}
-
-.resources-section h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
+    font-size: 2.4em;
+    margin-bottom: 25px;
+    font-weight: 600;
 }
 
 /* Contact Section */
 .contact-section {
-    padding: 50px 0;
-    background: #333;
+    padding: 60px 0;
+    background: #004085;
     color: #fff;
     text-align: center;
 }
 
 .contact-section h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
+    font-size: 2.4em;
+    margin-bottom: 25px;
+    font-weight: 600;
 }
 
 .contact-section input,
 .contact-section textarea {
-    width: 100%;
-    padding: 10px;
+    width: 80%;
+    padding: 15px;
     margin: 10px 0;
-    border-radius: 5px;
     border: none;
+    border-radius: 5px;
 }
 
 .contact-section button {
-    background: #00aaff;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
+    background: #ffdd57;
+    color: #004085;
+    padding: 12px 25px;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 500;
+    border-radius: 25px;
+    transition: background 0.3s ease;
 }
 
 .contact-section button:hover {
-    background: #0088cc;
+    background: #ffd800;
 }
 
 /* Footer */
 .footer {
-    padding: 20px 0;
-    background: #333;
+    background: #002752;
     color: #fff;
+    padding: 20px 0;
     text-align: center;
 }
 
-.social-icons img {
-    width: 20px;
+.footer p {
+    margin-bottom: 10px;
+}
+
+.footer .social-icons img {
+    width: 30px;
     margin: 0 10px;
-    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.footer .social-icons img:hover {
+    transform: scale(1.1);
 }
