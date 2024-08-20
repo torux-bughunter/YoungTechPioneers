@@ -5,86 +5,175 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Young Tech Pioneers</title>
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .navbar-brand {
+            font-weight: 600;
+            font-size: 1.5rem;
+        }
+
+        .hero-section {
+            background: url('https://example.com/hero-background.jpg') no-repeat center center/cover;
+            color: white;
+            padding: 150px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-section h2 {
+            font-weight: 600;
+            font-size: 2.5rem;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+        }
+
+        .hero-section .cta-button {
+            background-color: #007bff;
+            border: none;
+            padding: 10px 20px;
+            color: white;
+            font-weight: 600;
+            margin-top: 20px;
+            text-transform: uppercase;
+        }
+
+        .cta-button:hover {
+            background-color: #0056b3;
+        }
+
+        .about-section, .events-section, .success-section, .get-involved-section, .contact-section {
+            padding: 60px 0;
+        }
+
+        .events-section .event-card, .success-section .success-story {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .footer {
+            background: #343a40;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer .social-icons img {
+            width: 24px;
+            margin: 0 10px;
+        }
+    </style>
 </head>
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <h1 class="brand"><a href="#">Young Tech Pioneers</a></h1>
-            <ul class="nav-links">
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#events">Events</a></li>
-                <li><a href="#success">Success Stories</a></li>
-                <li><a href="#get-involved">Get Involved</a></li>
-                <li><a href="#contact">Contact Us</a></li>
-            </ul>
+            <a class="navbar-brand" href="#">Young Tech Pioneers</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#events">Events</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#success">Success Stories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#get-involved">Get Involved</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <header class="hero-section">
-        <div class="container">
+        <div class="container position-relative">
             <h2>Empowering Tomorrow's Innovators</h2>
             <p>Inspiring young minds through interactive STEM experiences</p>
-            <a href="#events" class="cta-button">Join Our Events</a>
+            <a href="#events" class="btn btn-primary cta-button">Join Our Events</a>
         </div>
     </header>
 
     <!-- About Us -->
     <section id="about" class="about-section">
         <div class="container">
-            <h2>About Us</h2>
-            <p>Young Tech Pioneers is committed to empowering the next generation of innovators through hands-on, interactive STEM experiences. We move beyond traditional coding exercises to introduce students to advanced topics like machine learning and cybersecurity in fun, practical ways.</p>
+            <h2 class="text-center">About Us</h2>
+            <p class="text-center">Young Tech Pioneers, a nonprofit organization committed to empowering the next generation of innovators by giving them hands-on, interactive STEM experiences, with a particular focus on computer science...</p>
         </div>
     </section>
 
     <!-- Events -->
     <section id="events" class="events-section">
         <div class="container">
-            <h2>Our Events</h2>
-            <div class="event-card">
-                <h3>Young Tech Pioneers STEM Fair</h3>
-                <p>Date: October 10, 2024</p>
-                <p>Location: Plano, TX</p>
-                <a href="#" class="event-link">Learn More</a>
+            <h2 class="text-center">Our Events</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="event-card">
+                        <h3>Young Tech Pioneers STEM Fair</h3>
+                        <p>Date: October 10, 2024</p>
+                        <p>Location: Plano, TX</p>
+                        <a href="#" class="btn btn-link event-link">Learn More</a>
+                    </div>
+                </div>
+                <!-- Add more event cards as needed -->
             </div>
-            <!-- Add more event cards as needed -->
         </div>
     </section>
 
     <!-- Success Stories -->
     <section id="success" class="success-section">
         <div class="container">
-            <h2>Success Stories</h2>
-            <div class="success-story">
-                <h3>Plano Children's Business Fair</h3>
-                <p>Our recent Plano Children's Business Fair was a resounding success, attracting over 100 attendees, 19 businesses, and generating over $650 in revenue for young entrepreneurs. Funds raised were directed towards supporting our mission to empower young innovators.</p>
+            <h2 class="text-center">Success Stories</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="success-story">
+                        <h3>Plano Children's Business Fair</h3>
+                        <p>Our recent Plano Children's Business Fair was a resounding success, attracting over 100 attendees, 19 businesses...</p>
+                    </div>
+                </div>
+                <!-- Add more success stories as needed -->
             </div>
-            <!-- Add more success stories as needed -->
         </div>
     </section>
 
     <!-- Get Involved -->
     <section id="get-involved" class="get-involved-section">
         <div class="container">
-            <h2>Get Involved</h2>
-            <p>Join us in making a difference! Whether you want to volunteer, donate, or sponsor an event, your support helps us continue to inspire the next generation of tech pioneers.</p>
-            <a href="#" class="cta-button">Join Us</a>
+            <h2 class="text-center">Get Involved</h2>
+            <p class="text-center">Join us in making a difference! Whether you want to volunteer, donate, or sponsor an event, your support helps us continue to inspire the next generation of tech pioneers.</p>
+            <div class="text-center">
+                <a href="#" class="btn btn-primary cta-button">Join Us</a>
+            </div>
         </div>
     </section>
 
     <!-- Contact Us -->
     <section id="contact" class="contact-section">
         <div class="container">
-            <h2>Contact Us</h2>
-            <form action="#">
-                <input type="text" placeholder="Your Name">
-                <input type="email" placeholder="Your Email">
-                <textarea placeholder="Your Message"></textarea>
-                <button type="submit" class="cta-button">Send Message</button>
+            <h2 class="text-center">Contact Us</h2>
+            <form action="#" class="d-flex flex-column align-items-center">
+                <input type="text" class="form-control mb-3 w-50" placeholder="Your Name">
+                <input type="email" class="form-control mb-3 w-50" placeholder="Your Email">
+                <textarea class="form-control mb-3 w-50" placeholder="Your Message"></textarea>
+                <button type="submit" class="btn btn-primary cta-button">Send Message</button>
             </form>
         </div>
     </section>
@@ -94,13 +183,14 @@
         <div class="container">
             <p>&copy; 2024 Young Tech Pioneers. All rights reserved.</p>
             <div class="social-icons">
-                <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
-                <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
-                <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+                <a href="#"><img src="https://example.com/facebook-icon.png" alt="Facebook"></a>
+                <a href="#"><img src="https://example.com/instagram-icon.png" alt="Instagram"></a>
+                <a href="#"><img src="https://example.com/linkedin-icon.png" alt="LinkedIn"></a>
             </div>
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
