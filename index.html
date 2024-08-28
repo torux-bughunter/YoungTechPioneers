@@ -13,71 +13,65 @@
             background-color: #f8f9fa;
             color: #212529;
         }
-/* Navbar styles */
+
+        /* Navbar styles */
+        
+
+        .navbar-brand img {
+            width: 80px;
+            height: auto;
+            margin-right: 15px;
+        }
+
+        .navbar {
+        transition: background-color 0.3s ease;
+    }
+    .navbar.transparent {
+        background-color: transparent !important;
+        box-shadow: none;
+    }
+    .navbar.bg-dark {
+        background-color: black !important;
+    }
+    .navbar.shrink {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    
+    .navbar.shrink .navbar-brand img {
+        height: 60px;
+    }
 .navbar {
-    background-color: rgba(40, 44, 52, 1); /* Slightly transparent dark background */
-    padding: 0.1rem 1rem;
-    transition: background-color 0.3s ease, padding 0.3s ease;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle bottom border */
-}
-
-.navbar {
-  background-color: rgba(40, 44, 52, 1); /* Slightly transparent dark background */
-  padding: 0.1rem 1rem;
-  transition: background-color 0.3s ease, padding 0.3s ease;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Subtle bottom border */
-}
-
-.navbar-brand {
-    display: flex;
-    align-items: center;
-    font-weight: 400;
-    font-size: 1.8rem;
-    color: #ffffff !important;
-    transition: color 0.3s ease;
-}
-
-.navbar-brand img {
-    width: 120px; /* Adjust logo size */
-    height: auto;
-    margin-right: 15px; /* Increased margin to separate text and logo */
-}
-
-.navbar-toggler-icon {
-    background-image: url('data:image/svg+xml;charset=UTF8,%3Csvg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath stroke="rgba%28155,155,155,0.7%29" stroke-width="3" stroke-linecap="round" stroke-miterlimit="10" d="M4 8h24M4 16h24M4 24h24"/%3E%3C/svg%3E');
-}
-
-.navbar-collapse {
-    justify-content: flex-end;
-}
-
-.nav-link {
-  color: #ffffff !important;
-  margin: 0 10px; /* Adjusted margin */
-  font-weight: 40; /* Medium weight */
-  transition: color 0.3s ease, background-color 0.3s ease;
-}
-.nav-link:hover {
-  color: #ffffff !important;
-  background-color: rgba(0, 0, 0, 0.1); /* Subtle hover background */
-}
-
-/* Hero Section */
-.hero-section {
-    position: relative;
-    overflow: hidden;
-    padding: 200px 0;
-    text-align: center;
     background-color: #000;
-    color: #00FF00;
 }
 
-/* Scroll effect for navbar */
-@keyframes scroll {
-    0% { transform: translateY(-100%); }
-    100% { transform: translateY(0); }
+.navbar-nav .nav-item .nav-link {
+    color: #fff;
+    margin: 5px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #000000;
+    transition: background-color 0.3s ease;
 }
 
+.navbar-nav .nav-item .nav-link:hover {
+    background-color: #0e0e0e;
+}
+
+        
+.navbar-nav .nav-item .nav-link:hover {
+    background-color: #0e0e0e;
+}
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            overflow: hidden;
+            padding: 200px 0;
+            text-align: center;
+            background-color: #000;
+            color: #00FF00;
+        }
 
         .hero-section h2 {
             font-weight: 600;
@@ -98,9 +92,11 @@
             0% {
                 opacity: 1;
             }
+
             50% {
                 opacity: 0;
             }
+
             100% {
                 opacity: 1;
             }
@@ -199,16 +195,78 @@
         .footer a {
             color: #00FF00;
         }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .navbar-brand img {
+                width: 60px;
+            }
+
+            .hero-section {
+                padding: 60px 0;
+            }
+
+            .hero-section h2 {
+                font-size: 2rem;
+            }
+
+            .hero-section p {
+                font-size: 1rem;
+            }
+
+            .cta-button {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-section {
+                padding: 40px 0;
+            }
+
+            .hero-section h2 {
+                font-size: 1.8rem;
+            }
+
+            .hero-section p {
+                font-size: 0.9rem;
+            }
+
+            .cta-button {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .event-card,
+            .success-story {
+                margin-bottom: 20px;
+            }
+
+            .carousel-container {
+                padding: 0;
+            }
+
+            .carousel-control-prev,
+            .carousel-control-next {
+                display: none;
+            }
+            
+        }
     </style>
 </head>
 
 <body>
-
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <a class="navbar-brand" href="#">Young Tech Pioneers
+            <a class="navbar-brand" href="#">
                 <img src="Young_2.png" alt="Young Tech Pioneers Logo">
+                Young Tech Pioneers
             </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -247,67 +305,61 @@
     <!-- Events -->
     <section id="events" class="events-section">
         <div class="container">
-            <h2 class="section-title text-center">Our Events</h2>
-            <div class="row justify-content-center">
-                <div class="col-md-4">
-                    <div class="event-card text-center">
+            <h2 class="section-title text-center">Upcoming Events</h2>
+            <div class="row">
+                <!-- Event 1 -->
+                <div class="event-card text-center">
                         <h3>Young Tech Pioneers STEM Fair</h3>
                         <p>Date: TBD</p>
                         <p>Location: Plano, TX</p>
                         <a href="#" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#learnMoreModal">Learn More</a>
                     </div>
-                </div>
-                <!-- Add more event cards as needed -->
+                
             </div>
         </div>
     </section>
 
     <!-- Success Stories -->
-    <!-- Success Stories -->
-<!-- Success Stories -->
-<section id="success" class="success-section">
-    <div class="container">
-        <h2 class="section-title text-center">Success Stories</h2>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="success-story text-center">
-                    <h3>Plano Children's Business Fair</h3>
-                    <p>Our recent Plano Children's Business Fair was a resounding success, attracting over 100 attendees to the 19 child-led businesses, generating over $650 in revenue for young entrepreneurs. The funds raised directly contribute to advancing our mission of empowering the next generation of innovators, fostering creativity, leadership, and real-world business experience in our community’s youth.  With assistance and funding from the non-profit organization GripTape, we successfully hosted the first GripTape-alumni-organized Children's Business Fair and are determined to continue paving the path to accessible, interactive, and innovative learning experiences for youth in our community.</p>
-                </div>
-            </div>
-            <!-- Carousel -->
-            <div class="col-md-6 carousel-container">
-                <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        
-                        <div class="carousel-item">
-                            <img src="Image2.JPG" class="d-block w-100 carousel-img" alt="...">
-                        </div>
-                        <div class="carousel-item active">
-                            <img src="Image3.JPG" class="d-block w-100 carousel-img" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="Image4.JPG" class="d-block w-100 carousel-img" alt="...">
-                        </div>
+    <section id="success" class="success-section">
+        <div class="container">
+            <h2 class="section-title text-center">Success Stories</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="success-story text-center">
+                        <h3>Plano Children's Business Fair</h3>
+                        <p>Our recent Plano Children's Business Fair was a resounding success, attracting over 100 attendees to the 19 child-led businesses, generating over $650 in revenue for young entrepreneurs. The funds raised directly contribute to advancing our mission of empowering the next generation of innovators, fostering creativity, leadership, and real-world business experience in our community’s youth.  With assistance and funding from the non-profit organization GripTape, we successfully hosted the first GripTape-alumni-organized Children's Business Fair and are determined to continue paving the path to accessible, interactive, and innovative learning experiences for youth in our community.</p>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
                 </div>
+                <!-- Carousel -->
+                <div class="col-md-6 carousel-container">
+                    <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            
+                            <div class="carousel-item">
+                                <img src="Image2.JPG" class="d-block w-100 carousel-img" alt="...">
+                            </div>
+                            <div class="carousel-item active">
+                                <img src="Image3.JPG" class="d-block w-100 carousel-img" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="Image4.JPG" class="d-block w-100 carousel-img" alt="...">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                
             </div>
         </div>
-    </div>
-</section>
-
-
-</section>
     </section>
-    
+
     <!-- Get Involved -->
     <section id="get-involved" class="get-involved-section">
         <div class="container text-center">
