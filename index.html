@@ -411,45 +411,57 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const navbar = document.querySelector('.navbar');
-            
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    navbar.classList.add('scrolled');
-                } else {
-                    navbar.classList.remove('scrolled');
-                }
-            });
+    document.addEventListener('DOMContentLoaded', () => {
+    const navbar = document.querySelector('.navbar');
     
-            const canvas = document.querySelector('.canvas-bg');
-            const ctx = canvas.getContext('2d');
-            const cols = canvas.width = window.innerWidth;
-            const rows = canvas.height = window.innerHeight;
-            const chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-            const charArray = chars.split("");
-            const fontSize = 10;
-            const columns = cols / fontSize;
-            const drops = Array.from({ length: columns }).fill(1);
-    
-            function draw() {
-                ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
-                ctx.fillRect(0, 0, cols, rows);
-                ctx.fillStyle = "#0F0";
-                ctx.font = `${fontSize}px monospace`;
-    
-                for (let i = 0; i < drops.length; i++) {
-                    const text = charArray[Math.floor(Math.random() * charArray.length)];
-                    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-                    if (drops[i] * fontSize > rows && Math.random() > 0.975) {
-                        drops[i] = 0;
-                    }
-                    drops[i]++;
-                }
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    const canvas = document.querySelector('.canvas-bg');
+    const ctx = canvas.getContext('2d');
+    let cols = canvas.width = window.innerWidth;
+    let rows = canvas.height = window.innerHeight;
+    const chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+    const charArray = chars.split("");
+    const fontSize = 10;
+    const columns = cols / fontSize;
+    const drops = Array.from({ length: columns }).fill(1);
+    let zoom = 1;
+
+    function draw() {
+        ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+        ctx.fillRect(0, 0, cols, rows);
+        ctx.fillStyle = `rgba(0, 255, 0, ${Math.sin(Date.now() / 500) * 0.5 + 0.5})`;
+        ctx.font = `${fontSize}px monospace`;
+        ctx.setTransform(zoom, 0, 0, zoom, cols / 2 * (1 - zoom), rows / 2 * (1 - zoom)); // Slow zoom effect
+
+        for (let i = 0; i < drops.length; i++) {
+            const text = charArray[Math.floor(Math.random() * charArray.length)];
+            ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+            if (drops[i] * fontSize > rows && Math.random() > 0.975) {
+                drops[i] = 0;
             }
-    
-            setInterval(draw, 33);
-        });
+            drops[i]++;
+        }
+
+        zoom += 0.001; // Gradual zoom in
+        if (zoom > 1.1) zoom = 1; // Reset zoom to prevent excessive scaling
+    }
+
+    setInterval(draw, 33);
+
+    window.addEventListener('resize', () => {
+        cols = canvas.width = window.innerWidth;
+        rows = canvas.height = window.innerHeight;
+        ctx.setTransform(1, 0, 0, 1, 0, 0); // Reset transform on resize
+    });
+});
+
     </script>
     
 
