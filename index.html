@@ -19,10 +19,12 @@
         
 
         .navbar-brand img {
-            width: 150px;
-            height: auto;
-            margin-right: 15px;
-        }
+    width: 150px; /* Desired width */
+    height: 80px; /* Fixed height to crop the top and bottom */
+    object-fit: cover; /* Ensures the image is covered within the given dimensions */
+    object-position: center; /* Center the image vertically to crop top and bottom evenly */
+    margin-right: 15px;
+}
 
         .navbar {
         transition: background-color 0.3s ease;
